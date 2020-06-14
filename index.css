@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Quicksand&family=Pacifico&display=swap');
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+html, body{
+    height: 100%;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 4vh;
+    font-family: 'Quicksand';
+    background-color: #34495e;
+    color: #fff;
+}
+h1, h2, ul{
+    margin: 0;
+    padding: 0;
+}
+button{
+    background-color: transparent;
+    border: 2px solid #fff;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    padding: 0;
+    font-size:.3em;
+    margin-left: 8px;
+    color: inherit;
+    cursor: pointer;
+}
+.js-clock h1{
+    font-family: 'Lobster';
+    font-size: 1.3em;
+    letter-spacing: 10px;
+
+}
+.clicked{
+    color: #7f8c8d;
+}
+.form,
+.greetings {
+    display: none;
+}
+input[type="text"]{
+    border: none;
+    background-color: transparent;
+    font-size: 3vh;
+    text-align: center;
+    color: inherit;
+    width: 324px;
+    outline: none;
+    padding: 6px 0;
+    margin: 12px 0;
+    
+}
+input[type="text"]::placeholder{
+    color: rgba(255, 255, 255, .7);
+    font-size: 4vh;
+}
+input[type="text"]:focus{
+    border-bottom: 2px solid #fff;
+}
+.showing{
+    display: block;
+}
+.greetings.showing{
+    font-family: 'Pacifico';
+    font-size: 4rem;
+}
+.bgImage{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    animation: fadeIn .5s linear;
+}
+.js-toDoList{
+    list-style: none;
+}
+.js-toDoList li{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 0;
+}
