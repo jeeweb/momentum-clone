@@ -45,17 +45,17 @@ body {
 }
 
 /* time */
-.aside__time > div {
+.aside__article > div {
   display: flex;
   align-items: center;
   gap: 4px;
 }
-.aside__time > div > *:first-child {
+.aside__article > div > *:first-child {
   width: 20px;
   text-align: center;
 }
-.aside__time .time__clock {
-  margin-bottom: 8px;
+.aside__article > div + div {
+  margin-top: 8px;
 }
 
 /* favorites */
@@ -92,7 +92,7 @@ body {
 }
 
 /* geoloaction */
-.geo__weather {
+.geo__location .geo__weather {
   display: flex;
   align-items: center;
   gap: 4px;
@@ -100,4 +100,13 @@ body {
 }
 .geo__weather > img {
   width: 20px;
+}
+
+/*** todo ***/
+.section__todo {
+  position: relative;
+}
+.aside__quote {
+  position: absolute;
+  bottom: 0;
 }
