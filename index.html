@@ -10,29 +10,80 @@
   <body>
     <div class="wrap">
       <section class="section section__aside">
-        <div class="asdie__time">
-          <span id="jsDate"></span>
-          <span id="jsClock">00:00:00</span>
-        </div>
-        <div class="aside__geolocation">
-          <span id="jsLocation"></span>
-          <span id="jsWeather"></span>
+        <div class="aside__time">
+          <div class="time__clock">
+            <i class="fas fa-sun"></i>
+            <span id="jsClock">00:00:00</span>
+          </div>
+          <div class="time__date">
+            <a href="https://time.is/ko/calendar/2023" target="_blank"><i class="far fa-calendar-alt"></i></a>
+            <span id="jsDate"></span>
+          </div>
         </div>
         <div class="aside__favorites">
+          <span class="favorites__title">Favorites</span>
           <ul class="list__favorites">
             <li class="favorites__item">
-              <a href="https://nomadcoders.co/" target="_blank">
+              <a
+                href="https://nomadcoders.co/"
+                target="_blank"
+                class="favorites__link"
+              >
                 <div class="favorites__icon">
-                  <img src="img/logo-nomad.svg" />
+                  <img src="img/logo-nomad.svg" style="transform: scale(0.8)" />
                 </div>
                 <span class="favorites__name">Nomad Coders</span>
               </a>
             </li>
+            <li class="favorites__item">
+              <a
+                href="https://mail.google.com/"
+                target="_blank"
+                class="favorites__link"
+              >
+                <div class="favorites__icon">
+                  <img src="img/logo-gmail.png" />
+                </div>
+                <span class="favorites__name">Gmail</span>
+              </a>
+            </li>
+            <li class="favorites__item">
+              <a
+                href="https://animated-albatross-a89.notion.site/5fe07a301ada406ab42d849f4cf637f5"
+                target="_blank"
+                class="favorites__link"
+              >
+                <div class="favorites__icon">
+                  <img src="img/logo-notion.png" />
+                </div>
+                <span class="favorites__name">Notion</span>
+              </a>
+            </li>
+            <li class="favorites__item">
+              <a
+                href="https://www.youtube.com/"
+                target="_blank"
+                class="favorites__link"
+              >
+                <div class="favorites__icon">
+                  <img src="img/logo-youtube.jpeg" />
+                </div>
+                <span class="favorites__name">Youtube</span>
+              </a>
+            </li>
           </ul>
         </div>
-        <div class="aside__quote" id="jsQuote">
-          <p class="quote__text"></p>
-          <span class="quote_author"></span>
+        <div class="aside__geolocation">
+          <div class="geo__location">
+            <i class="fas fa-location-arrow"></i>
+            <span id="jsLocation"></span>
+          </div>
+          <div class="geo__weather">
+            <img src="" id="jsWeatherIcon"></img>
+            <span id="jsWeather"></span>
+            <span>/</span>
+            <span id="jsTemp"></span>
+          </div>
         </div>
       </section>
 
@@ -52,8 +103,17 @@
           <button>Add</button>
         </form>
         <ul class="list__todo"></ul>
+        <div class="aside__quote" id="jsQuote">
+          <p class="quote__text"></p>
+          <span class="quote_author"></span>
+        </div>
       </section>
     </div>
+    <script
+      script
+      src="https://kit.fontawesome.com/6478f529f2.js"
+      crossorigin="anonymous"
+    ></script>
     <script src="js/greetings.js"></script>
     <script src="js/clock.js"></script>
     <script src="js/quotes.js"></script>

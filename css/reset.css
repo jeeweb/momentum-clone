@@ -144,8 +144,8 @@ button {
   cursor: pointer;
 }
 img {
-  height: 100%;
-  width: auto;
+  width: 100%;
+  height: auto;
 }
 * {
   box-sizing: border-box;
