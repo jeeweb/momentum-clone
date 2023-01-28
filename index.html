@@ -1,36 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/style.css">
-  <title>Momentum App</title>
-</head>
-<body>
-  <form class="hidden" id="login-form">
-    <input type="text" maxlength="15" placeholder="What is your name?" required>
-    <input type="submit" value="Log In">
-  </form>
-  <h2 id="clock">00:00:00</h2>
-  <h1 id="greeting" class="hidden"></h1>
-  <form id="todo-form">
-    <input type="text" placeholder="Write a To Do and Press Enter">
-  </form>
-  <ul id="todo-list"></ul>
-  <div id="quote">
-    <span></span>
-    <span></span>
-  </div>
-  <div id="weather">
-    <span></span>
-    <span></span>
-  </div>
-  <script src="js/greetings.js"></script>
-  <script src="js/clock.js"></script>
-  <script src="js/quotes.js"></script>
-  <script src="js/background.js"></script>
-  <script src="js/todo.js"></script>
-  <script src="js/weather.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>myDayboard</title>
+  </head>
+  <body>
+    <div class="wrap">
+      <section class="section section__aside">
+        <div class="asdie__time">
+          <span id="jsDate"></span>
+          <span id="jsClock">00:00:00</span>
+        </div>
+        <div class="aside__geolocation">
+          <span id="jsLocation"></span>
+          <span id="jsWeather"></span>
+        </div>
+        <div class="aside__favorites">
+          <ul class="list__favorites">
+            <li class="favorites__item">
+              <a href="https://nomadcoders.co/" target="_blank">
+                <div class="favorites__icon">
+                  <img src="img/logo-nomad.svg" />
+                </div>
+                <span class="favorites__name">Nomad Coders</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="aside__quote" id="jsQuote">
+          <p class="quote__text"></p>
+          <span class="quote_author"></span>
+        </div>
+      </section>
+
+      <section class="section section__todo">
+        <form class="todo__form-user hidden" id="jsLoginForm">
+          <input
+            type="text"
+            maxlength="10"
+            placeholder="What is your name?"
+            required
+          />
+          <button>Enter</button>
+        </form>
+        <p id="jsGreeting" class="todo__greeting hidden"></p>
+        <form class="todo__form-todo" id="jsTodoForm">
+          <input type="text" placeholder="Write a To Do and Press Enter" />
+          <button>Add</button>
+        </form>
+        <ul class="list__todo"></ul>
+      </section>
+    </div>
+    <script src="js/greetings.js"></script>
+    <script src="js/clock.js"></script>
+    <script src="js/quotes.js"></script>
+    <script src="js/background.js"></script>
+    <script src="js/todo.js"></script>
+    <script src="js/weather.js"></script>
+  </body>
 </html>
