@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap");
 @import "reset.css";
+@import "variables.css";
 
 html,
 body {
@@ -9,7 +10,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #333;
+  color: var(--darkblue);
   font-size: 14px;
   font-family: "Noto Sans KR", -apple-system, BlinkMacSystemFont, "Segoe UI",
     Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
@@ -17,53 +18,60 @@ body {
 
 /*** common class ***/
 .hidden {
-  display: none;
+  display: none !important;
 }
 .wrap {
   display: flex;
-  width: 90vw;
-  height: 90vh;
-  border-radius: 16px;
-  background-color: #fff;
-  box-shadow: 0 2px 14px rgba(0, 0, 0, 0.3);
+  gap: 20px;
+  width: 60vw;
+  height: 80vh;
+  padding: 36px;
 }
-.section {
-  padding: 20px;
-}
-
-.article__title {
-  font-size: 12px;
-}
-
 .btn {
   font-size: 0.8em;
 }
+.section {
+  padding: 20px;
+  border-radius: 16px;
+  background-color: #f7fbff;
+  box-shadow: -10px -10px 15px rgba(255, 255, 255, 0.5),
+    10px 10px 15px rgba(70, 70, 70, 0.12);
+}
+.section__title {
+  font-size: 12px;
+  color: var(--point);
+}
 
 /*** aside ***/
+.aside {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 180px;
+}
 .section__aside {
   display: flex;
   flex-direction: column;
-  width: 240px;
-  border-right: 1px solid #ddd;
 }
-.aside__article > div {
+
+/* currentInfo */
+.aside__currentInfo > div {
   display: flex;
   align-items: center;
   gap: 4px;
   height: 20px;
 }
-.aside__article > div > *:first-child {
+.aside__currentInfo > div + div {
+  margin-top: 8px;
+}
+.aside__currentInfo > div > *:first-child {
   width: 20px;
   text-align: center;
-}
-.aside__article > div + div {
-  margin-top: 8px;
 }
 
 /* favorites */
 .aside__favorites {
   flex: 1;
-  padding: 20px 0;
 }
 .list__favorites {
   margin-top: 8px;
@@ -87,7 +95,6 @@ body {
   height: 20px;
   overflow: hidden;
   border-radius: 50%;
-  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
 }
 
 /* geoloaction */
@@ -116,7 +123,7 @@ body {
   flex: 1;
 }
 .todo__form .form__input::placeholder {
-  color: #ccc;
+  color: var(--lightgray);
 }
 
 /* user */
@@ -136,11 +143,8 @@ body {
   bottom: 0;
   width: 0;
   height: 1px;
-  background-color: #333;
+  background-color: var(--point);
   transition: width 0.4s;
-}
-.todo__user .form-user__input:focus + .line__bottom {
-  width: 100%;
 }
 .todo__user .btn__enter {
   display: flex;
@@ -148,10 +152,17 @@ body {
   justify-content: center;
   width: 24px;
   height: 24px;
-  color: #999;
+  color: var(--gray);
   font-size: 0.8em;
   border-radius: 50%;
-  border: 1px solid #999;
+  border: 1px solid var(--gray);
+}
+.todo__user .form-user__input:focus + .line__bottom {
+  width: 100%;
+}
+.todo__user .form-user__input:focus ~ .btn__enter {
+  color: var(--darkblue);
+  border: 0;
 }
 
 /* todo */
@@ -226,6 +237,8 @@ body {
   position: absolute;
   bottom: 20px;
   line-height: 20px;
+  color: var(--lightgray);
+  font-size: 0.8em;
 }
 .aside__quote .quote__text {
   margin-right: 8px;

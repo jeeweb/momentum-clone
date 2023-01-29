@@ -9,21 +9,31 @@
   </head>
   <body>
     <div class="wrap">
-      <section class="section section__aside">
-        <article class="aside__time aside__article">
-          <div class="time__clock">
-            <i class="fas fa-sun"></i>
-            <span id="jsClock">00:00:00</span>
-          </div>
+      <div class="aside">
+        <section class="aside__currentInfo section__aside section">
           <div class="time__date">
             <a href="https://time.is/ko/calendar/2023" target="_blank"
               ><i class="far fa-calendar-alt"></i
             ></a>
             <span id="jsDate"></span>
           </div>
-        </article>
-        <div class="aside__favorites">
-          <span class="article__title">Favorites</span>
+          <div class="time__clock">
+            <i class="fas fa-sun"></i>
+            <span id="jsClock">00:00:00</span>
+          </div>
+          <div class="geo__location">
+            <i class="fas fa-location-arrow"></i>
+            <span id="jsLocation"></span>
+          </div>
+          <div class="geo__weather">
+            <img src="" id="jsWeatherIcon" />
+            <span id="jsWeather"></span>
+            <span>/</span>
+            <span id="jsTemp"></span>
+          </div>
+        </section>
+        <section class="aside__favorites section__aside section">
+          <span class="section__title">Favorites</span>
           <ul class="list__favorites">
             <li class="favorites__item">
               <a
@@ -74,21 +84,8 @@
               </a>
             </li>
           </ul>
-        </div>
-        <article class="aside__geolocation aside__article">
-          <div class="geo__location">
-            <i class="fas fa-location-arrow"></i>
-            <span id="jsLocation"></span>
-          </div>
-          <div class="geo__weather">
-            <img src="" id="jsWeatherIcon" />
-            <span id="jsWeather"></span>
-            <span>/</span>
-            <span id="jsTemp"></span>
-          </div>
-        </article>
-      </section>
-
+        </section>
+      </div>
       <section class="section section__todo">
         <div class="todo__user">
           <form class="todo__form-user todo__form hidden" id="jsLoginForm">
@@ -107,7 +104,7 @@
           <p id="jsGreeting" class="todo__greeting hidden"></p>
         </div>
         <div class="todo__todo">
-          <span class="article__title">To Do List</span>
+          <span class="section__title">To Do List</span>
           <form class="todo__form-todo todo__form" id="jsTodoForm">
             <input
               type="text"
