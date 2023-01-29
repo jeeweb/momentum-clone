@@ -35,6 +35,10 @@ body {
   font-size: 12px;
 }
 
+.btn {
+  font-size: 0.8em;
+}
+
 /*** aside ***/
 .section__aside {
   display: flex;
@@ -114,17 +118,6 @@ body {
 .todo__form .form__input::placeholder {
   color: #ccc;
 }
-.todo__form .btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 24px;
-  height: 24px;
-  color: #999;
-  font-size: 0.8em;
-  border-radius: 50%;
-  border: 1px solid #999;
-}
 
 /* user */
 .todo__user {
@@ -149,14 +142,83 @@ body {
 .todo__user .form-user__input:focus + .line__bottom {
   width: 100%;
 }
+.todo__user .btn__enter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  color: #999;
+  font-size: 0.8em;
+  border-radius: 50%;
+  border: 1px solid #999;
+}
 
 /* todo */
 .todo__todo {
+  position: relative;
   padding: 20px 0;
 }
 .todo__todo .form-todo__input {
   margin-top: 4px;
   padding: 8px 0;
+}
+.todo__todo .btn__add {
+  position: absolute;
+  right: 0;
+  top: 20px;
+}
+
+.list__todo .todo__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 8px 0 8px;
+}
+.list__todo .todo__check {
+  position: absolute;
+  width: 1px;
+  height: 0;
+}
+.list__todo .todo__text {
+  position: relative;
+  flex: 1;
+  padding-left: 24px;
+}
+.list__todo .todo__text:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 1px solid #999;
+}
+.list__todo .todo__text > span {
+  position: relative;
+}
+.list__todo .todo__check + .todo__text > span:after {
+  content: "";
+  position: absolute;
+  left: 0px;
+  top: 50%;
+  width: 0;
+  height: 2px;
+  background-color: #999;
+  transition: width 0.2s;
+}
+.list__todo .todo__check:checked + .todo__text {
+  font-style: italic;
+  color: #ccc;
+}
+.list__todo .todo__check:checked + .todo__text:before {
+  background-color: #999;
+}
+.list__todo .todo__check:checked + .todo__text > span:after {
+  width: 100%;
 }
 
 /* quote */

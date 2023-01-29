@@ -11,21 +11,33 @@ function saveToDos() {
 }
 
 function deleteToDo(event) {
-  const li = event.target.parentElement;
+  const li = event.target.parentElement.parentElement;
   li.remove();
   toDos = toDos.filter((toDo) => toDo.id !== parseInt(li.id));
   saveToDos();
 }
 
 function paintToDo(newTodo) {
+  let checkID = toDoList.children.length + 1;
   const li = document.createElement("li");
   li.id = newTodo.id;
+  li.className = "todo__item";
+  const checkBox = document.createElement("input");
+  checkBox.setAttribute("type", "checkbox");
+  checkBox.id = checkID;
+  checkBox.className = "todo__check";
+  const label = document.createElement("label");
+  label.setAttribute("for", checkID);
+  label.className = "todo__text";
   const span = document.createElement("span");
   span.innerText = newTodo.text;
+  label.appendChild(span);
   const button = document.createElement("button");
-  button.innerText = "❌";
+  button.innerHTML = `<i class="fas fa-trash-alt"></i>`;
+  button.className = "btn__delete btn";
   button.addEventListener("click", deleteToDo);
-  li.appendChild(span);
+  li.appendChild(checkBox);
+  li.appendChild(label);
   li.appendChild(button);
   toDoList.appendChild(li);
 }
