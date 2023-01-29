@@ -60,13 +60,13 @@ body {
   flex-direction: column;
   gap: 20px;
   width: 180px;
-}
-.section__aside {
-  display: flex;
-  flex-direction: column;
+  flex-shrink: 0;
 }
 
 /* currentInfo */
+.aside__currentInfo {
+  animation: moveUp 0.6s ease-in;
+}
 .aside__currentInfo > div {
   display: flex;
   align-items: center;
@@ -83,7 +83,14 @@ body {
 
 /* favorites */
 .aside__favorites {
-  flex: 1;
+  height: 100%;
+  overflow-y: auto;
+  opacity: 0;
+  animation: moveUp 0.6s ease-in 0.2s forwards;
+}
+.aside__favorites .scroll-wrap {
+  max-height: calc(100% - 20px);
+  overflow-y: auto;
 }
 .list__favorites .favorites__link {
   display: flex;
@@ -115,7 +122,8 @@ body {
 /*** todo ***/
 .section__todo {
   flex: 1;
-  position: relative;
+  opacity: 0;
+  animation: moveUp 0.6s ease-in 0.4s forwards;
 }
 .todo__form {
   display: flex;
