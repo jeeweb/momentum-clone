@@ -31,9 +31,8 @@ body {
   padding: 20px;
 }
 
-/* section */
-.section__todo {
-  flex: 1;
+.article__title {
+  font-size: 12px;
 }
 
 /*** aside ***/
@@ -43,12 +42,11 @@ body {
   width: 240px;
   border-right: 1px solid #ddd;
 }
-
-/* time */
 .aside__article > div {
   display: flex;
   align-items: center;
   gap: 4px;
+  height: 20px;
 }
 .aside__article > div > *:first-child {
   width: 20px;
@@ -62,9 +60,6 @@ body {
 .aside__favorites {
   flex: 1;
   padding: 20px 0;
-}
-.aside__favorites .favorites__title {
-  font-size: 12px;
 }
 .list__favorites {
   margin-top: 8px;
@@ -104,9 +99,73 @@ body {
 
 /*** todo ***/
 .section__todo {
+  flex: 1;
   position: relative;
 }
+.todo__form {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+.todo__form .form__input {
+  flex: 1;
+}
+.todo__form .form__input::placeholder {
+  color: #ccc;
+}
+.todo__form .btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  color: #999;
+  font-size: 0.8em;
+  border-radius: 50%;
+  border: 1px solid #999;
+}
+
+/* user */
+.todo__user {
+  height: 48px;
+}
+.todo__user .todo__form-user {
+  position: relative;
+}
+.todo__user .form-user__input {
+  padding: 8px 0px;
+  font-size: 24px;
+}
+.todo__user .form-user__input + .line__bottom {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 1px;
+  background-color: #333;
+  transition: width 0.4s;
+}
+.todo__user .form-user__input:focus + .line__bottom {
+  width: 100%;
+}
+
+/* todo */
+.todo__todo {
+  padding: 20px 0;
+}
+.todo__todo .form-todo__input {
+  margin-top: 4px;
+  padding: 8px 0;
+}
+
+/* quote */
 .aside__quote {
   position: absolute;
-  bottom: 0;
+  bottom: 20px;
+  line-height: 20px;
+}
+.aside__quote .quote__text {
+  margin-right: 8px;
+  font-style: italic;
 }

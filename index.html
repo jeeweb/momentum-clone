@@ -16,12 +16,14 @@
             <span id="jsClock">00:00:00</span>
           </div>
           <div class="time__date">
-            <a href="https://time.is/ko/calendar/2023" target="_blank"><i class="far fa-calendar-alt"></i></a>
+            <a href="https://time.is/ko/calendar/2023" target="_blank"
+              ><i class="far fa-calendar-alt"></i
+            ></a>
             <span id="jsDate"></span>
           </div>
         </article>
         <div class="aside__favorites">
-          <span class="favorites__title">Favorites</span>
+          <span class="article__title">Favorites</span>
           <ul class="list__favorites">
             <li class="favorites__item">
               <a
@@ -79,7 +81,7 @@
             <span id="jsLocation"></span>
           </div>
           <div class="geo__weather">
-            <img src="" id="jsWeatherIcon"></img>
+            <img src="" id="jsWeatherIcon" />
             <span id="jsWeather"></span>
             <span>/</span>
             <span id="jsTemp"></span>
@@ -88,23 +90,36 @@
       </section>
 
       <section class="section section__todo">
-        <form class="todo__form-user hidden" id="jsLoginForm">
-          <input
-            type="text"
-            maxlength="10"
-            placeholder="What is your name?"
-            required
-          />
-          <button>Enter</button>
-        </form>
-        <p id="jsGreeting" class="todo__greeting hidden"></p>
-        <form class="todo__form-todo" id="jsTodoForm">
-          <input type="text" placeholder="Write a To Do and Press Enter" />
-          <button>Add</button>
-        </form>
-        <ul class="list__todo"></ul>
+        <div class="todo__user">
+          <form class="todo__form-user todo__form hidden" id="jsLoginForm">
+            <input
+              type="text"
+              class="form-user__input form__input"
+              maxlength="10"
+              placeholder="이름을 입력해주세요 🙂"
+              required
+            />
+            <span class="line__bottom"></span>
+            <button class="btn__enter btn">
+              <i class="fas fa-sign-in-alt"></i>
+            </button>
+          </form>
+          <p id="jsGreeting" class="todo__greeting hidden"></p>
+        </div>
+        <div class="todo__todo">
+          <span class="article__title">To Do List</span>
+          <form class="todo__form-todo todo__form" id="jsTodoForm">
+            <input
+              type="text"
+              class="form-todo__input form__input"
+              placeholder="오늘 할 일은 무엇인가요?"
+            />
+            <button class="btn__add btn"><i class="fas fa-plus"></i></button>
+          </form>
+          <ul class="list__todo"></ul>
+        </div>
         <div class="aside__quote" id="jsQuote">
-          <p class="quote__text"></p>
+          <span class="quote__text"></span>
           <span class="quote_author"></span>
         </div>
       </section>
