@@ -78,6 +78,7 @@
 .todo__todo .scroll-wrap {
   max-height: calc(80vh - 270px);
   overflow-y: auto;
+  padding-right: 10px;
 }
 .list__todo .todo__item {
   display: flex;
@@ -95,6 +96,7 @@
   position: relative;
   flex: 1;
   padding-left: 24px;
+  width: calc(100% - 20px);
 }
 .list__todo .todo__text:before {
   content: "";
@@ -109,6 +111,11 @@
 }
 .list__todo .todo__text > span {
   position: relative;
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-break: break-all;
 }
 .list__todo .todo__check + .todo__text > span:after {
   content: "";
