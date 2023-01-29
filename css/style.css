@@ -34,9 +34,10 @@ body {
 .wrap {
   display: flex;
   gap: 20px;
-  width: 60vw;
-  height: 80vh;
   padding: 36px;
+  width: 60vw;
+  min-width: 700px;
+  height: 80vh;
 }
 .btn {
   font-size: 0.8em;
@@ -179,7 +180,7 @@ body {
 }
 
 .todo__greeting {
-  font-size: 40px;
+  font-size: 2.8em;
   font-weight: 700;
   animation: moveUp 0.6s ease-in;
 }
@@ -266,4 +267,36 @@ body {
 .aside__quote .quote__text {
   margin-right: 8px;
   font-style: italic;
+}
+
+@media (max-width: 699px) {
+  body {
+    font-size: 12px;
+  }
+  .wrap {
+    flex-direction: column;
+    width: 100vw;
+    min-width: auto;
+    height: 90vh;
+  }
+  .aside {
+    flex-direction: row;
+    width: 100%;
+  }
+  .aside__currentInfo > div + div {
+    margin-top: 2px;
+  }
+  .aside__favorites {
+    flex: 1;
+  }
+  .aside__favorites .list__favorites {
+    display: flex;
+    align-items: center;
+    gap: 4px 10px;
+    flex-wrap: wrap;
+  }
+  .list__favorites .favorites__link {
+    gap: 2px;
+    padding: 0;
+  }
 }
