@@ -111,11 +111,12 @@
 }
 .list__todo .todo__text > span {
   position: relative;
-  display: block;
+  /* display: block;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
   word-break: break-all;
+  width: calc(100% - 20px); */
 }
 .list__todo .todo__check + .todo__text > span:after {
   content: "";
